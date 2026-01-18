@@ -28,27 +28,32 @@ The application uses a modular architecture where each command is handled by its
 ### Building the Project
 1. Clone this repository to your local machine.
 2. Build the optimized binary:
+3. 
    ```bash
    cargo build --release
    ```
+
+   
 📖 Usage
 The application uses a sub-command structure defined in main.rs. Run the tool followed by the command name and its specific arguments:
 
-Bash
-
+ ```bash
 cargo run -- <command> [arguments]
+```
+
 Examples
-View Files: cargo run -- cat document.txt
+View Files: ```cargo run -- cat document.txt```
 
-Check UTC Time: cargo run -- date --utc
+Check UTC Time: ```cargo run -- date --utc```
 
-Custom Head: cargo run -- head -n 5 data.log (reads the first 5 lines)
+Custom Head: ```cargo run -- head -n 5 data.log``` (reads the first 5 lines)
 
-Recursive Delete: cargo run -- rm -r target_folder
+Recursive Delete: ```cargo run -- rm -r target_folder```
 
-Echo text: cargo run -- echo "Hello World"
+Echo text: ```cargo run -- echo "Hello World"```
 
-📂 Project Structure
+## 📂 Project Structure
+
 main.rs: The entry point that uses a match statement to route arguments to the correct utility module.
 
 cat.rs: Uses BufReader to efficiently read and print file lines.
@@ -63,5 +68,6 @@ head.rs: Implements line-limited file reading using .take(n).
 
 rm.rs: Handles filesystem deletions, including logic for empty directories and recursive removal using remove_dir_all.
 
-⚠️ Important Note on Error Handling
-The current implementation utilizes panic! and unwrap() for error handling in several modules, such as when a file cannot be opened or a command is unknown. Users should use the rm command with caution as it will panic on unauthorized access or missing metadata.
+## ⚠️ Important Note on Error Handling
+The current implementation utilizes panic! and unwrap() for error handling in several modules, such as when a file cannot be opened or a command is unknown. Users should use the ``rm`` command with caution as it will panic on unauthorized access or missing metadata.
+
