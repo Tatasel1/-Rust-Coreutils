@@ -32,7 +32,8 @@ The application uses a modular architecture where each command is handled by its
    ```
 
    
-📖 Usage
+## 📖 Usage
+
 The application uses a sub-command structure defined in main.rs. Run the tool followed by the command name and its specific arguments:
 
  ```bash
@@ -68,6 +69,7 @@ Echo text: ```cargo run -- echo "Hello World"```
 
 ## ⚠️ Important Note on Error Handling
 The current implementation utilizes ``panic!`` and ``unwrap()`` for error handling in several modules, such as when a file cannot be opened or a command is unknown. Users should use the ``rm`` command with caution as it will panic on unauthorized access or missing metadata.
+
 
 
 
