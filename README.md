@@ -28,7 +28,7 @@ The application uses a modular architecture where each command is handled by its
 ### Building the Project
 1. Clone this repository to your local machine.
 2. Build the optimized binary:
-3. 
+ 
    ```bash
    cargo build --release
    ```
@@ -54,20 +54,21 @@ Echo text: ```cargo run -- echo "Hello World"```
 
 ## 📂 Project Structure
 
-main.rs: The entry point that uses a match statement to route arguments to the correct utility module.
+``main.rs``: The entry point that uses a match statement to route arguments to the correct utility module.
 
-cat.rs: Uses BufReader to efficiently read and print file lines.
+``cat.rs``: Uses BufReader to efficiently read and print file lines.
 
-date.rs: Interfaces with the chrono crate to format system time in Local or UTC.
+``date.rs``: Interfaces with the chrono crate to format system time in Local or UTC.
 
-echo.rs: Handles simple output logic and newline suppression flags.
+``echo.rs``: Handles simple output logic and newline suppression flags.
 
-env.rs: Accesses the environment via std::env::vars().
+``env.rs``: Accesses the environment via std::env::vars().
 
-head.rs: Implements line-limited file reading using .take(n).
+``head.rs``: Implements line-limited file reading using .take(n).
 
-rm.rs: Handles filesystem deletions, including logic for empty directories and recursive removal using remove_dir_all.
+``rm.rs``: Handles filesystem deletions, including logic for empty directories and recursive removal using remove_dir_all.
 
 ## ⚠️ Important Note on Error Handling
-The current implementation utilizes panic! and unwrap() for error handling in several modules, such as when a file cannot be opened or a command is unknown. Users should use the ``rm`` command with caution as it will panic on unauthorized access or missing metadata.
+The current implementation utilizes ``panic!`` and ``unwrap()`` for error handling in several modules, such as when a file cannot be opened or a command is unknown. Users should use the ``rm`` command with caution as it will panic on unauthorized access or missing metadata.
+
 
