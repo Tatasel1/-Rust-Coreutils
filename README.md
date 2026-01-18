@@ -1,6 +1,4 @@
-﻿# -Rust-Coreutils
-
-# Rusty Coreutils
+﻿# Rust Coreutils
 
 A collection of basic Unix-like command-line utilities implemented in **Rust**. This project was developed as part of the **Rust Workshop at Politehnica Bucharest**. It serves as a functional demonstration of file I/O, argument parsing, and system interaction using the Rust standard library and external crates.
 
@@ -70,5 +68,6 @@ Echo text: ```cargo run -- echo "Hello World"```
 
 ## ⚠️ Important Note on Error Handling
 The current implementation utilizes ``panic!`` and ``unwrap()`` for error handling in several modules, such as when a file cannot be opened or a command is unknown. Users should use the ``rm`` command with caution as it will panic on unauthorized access or missing metadata.
+
 
 
